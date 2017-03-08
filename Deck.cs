@@ -3,12 +3,12 @@ using System.Collections.Generic;
 namespace CardGame {
     public class Deck {
         // a deck is a list of cards, instanciate a new list.  May need to switch the list back to private.
-        public List<object> cards = new List<object> ();
+        public List<Card> cards = new List<Card> ();
         // it mixes the cards using a modified fisher-yates method.
         public void mix () {
             Random rand = new Random ();
             for (int i = 0; i < cards.Count; i++) {
-                object temp = cards[i];
+                Card temp = cards[i];
                 int newLocation = (rand.Next (0, cards.Count));
                 cards[i] = cards[newLocation];
                 cards[newLocation] = temp;
@@ -21,13 +21,13 @@ namespace CardGame {
             }
         }
         // deal the top card of the deck.
-        public object deal () {
+        public Card deal () {
             int topCardIndex = cards.Count;
             if (topCardIndex == 0) {
                 System.Console.WriteLine ("Out of cards");
                 return null;
             }
-            object topCard = cards[topCardIndex];
+            Card topCard = cards[topCardIndex];
             return topCard;
         }
         // reset the deck to all 52 cards, doesn't shuffle them.
@@ -37,7 +37,7 @@ namespace CardGame {
                 cards.Add (new Card (i));
             }
         }
-        // overrides the ToString method so that every card of the deck is displaed in current order not jsut as <object>
+        // overrides the ToString method so that every card of the deck is displaed in current order not just as <object>
         public override string ToString () {
             string info = "";
             foreach (Card card in cards) {

@@ -4,7 +4,7 @@ namespace CardGame {
         // each player needs a name.
         public string playerName;
         // Player's hand is a list of cards held by the player.
-        public List<object> hand = new List<object> ();
+        public List<Card> hand = new List<Card> ();
         // money is how much the player has in credit, for use in gambling card games.
         public int money;
         // draw method requires a deck to be passed.  Takes the top card.
@@ -13,10 +13,10 @@ namespace CardGame {
         }
         // discard method destroys a specific card from the hand.
         // TODO may need to change this to a card object rather than an index.
-        public object discard (int cardIndex) {
-            if (hand[cardIndex] != null) {
-                object temp = hand[cardIndex];
-                hand.Remove (cardIndex);
+        public Card discard (Card card) {
+            if (hand.Contains(card)) {
+                Card temp = card;
+                hand.Remove(card);
                 return temp;
             }
             return null;
