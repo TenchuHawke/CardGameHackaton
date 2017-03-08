@@ -22,13 +22,26 @@ namespace CardGame {
         }
         // deal the top card of the deck.
         public Card deal () {
-            int topCardIndex = cards.Count;
+            int topCardIndex = cards.Count-1;
             if (topCardIndex == 0) {
                 System.Console.WriteLine ("Out of cards");
                 return null;
             }
             Card topCard = cards[topCardIndex];
+            cards.Remove(topCard);
             return topCard;
+        }
+
+        public Card burn(){
+            int topCardIndex = cards.Count -1;
+            if(topCardIndex == 0){
+                System.Console.WriteLine("out of cards");
+                return null;
+            }
+            Card card = cards[0];
+            cards.RemoveAt(0);
+            System.Console.WriteLine("BURN 1");
+            return card;
         }
         // reset the deck to all 52 cards, doesn't shuffle them.
         public void reset () {
