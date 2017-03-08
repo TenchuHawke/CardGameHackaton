@@ -31,3 +31,5 @@ Create the following:
                 if only 1 player that player wins.
             ask to quit, if yes then gameon=false.
     
+    In deck
+    make burn function to remove top card

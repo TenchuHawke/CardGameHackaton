@@ -33,7 +33,7 @@ namespace CardGame {
         // reset the deck to all 52 cards, doesn't shuffle them.
         public void reset () {
             cards.Clear ();
-            for (int i = 0; i < 54; i++) {
+            for (int i = 0; i < 52; i++) {
                 cards.Add (new Card (i));
             }
         }
