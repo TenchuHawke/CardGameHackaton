@@ -2,6 +2,7 @@ using System;
 namespace CardGame {
     class Program {
         static void Main (string[] args) {
+            Commands.Test();
             // sets color for table.
             Console.BackgroundColor = ConsoleColor.DarkGreen;
             Console.Clear ();
