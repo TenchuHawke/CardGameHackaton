@@ -1,6 +1,8 @@
 namespace CardGame {
     public class Card {
-        public string color {
+        public string color 
+        // create get method to dynamically grab card color.  There is no 'Set' Method.
+        {
             get {
                 if ((suit == "Clubs") || (suit == "Spades")) {
                     return "black";
@@ -12,7 +14,7 @@ namespace CardGame {
             }
         }
         public string stringVal
-        // when you get string value it calculates based upon card value, there is no 'set' method.
+        // when you get string value it dynamically calculates the String Value based upon card value, there is no 'set' method.
         {
             get {
                 switch (val) {
