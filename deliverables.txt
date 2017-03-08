@@ -1,0 +1,33 @@
+Create the following:
+    Table class which has:
+        List of players
+        Value of Pot
+        A deck
+        tracks the dealer
+        has a common card player object
+    Main program that:
+        Creates a new Table
+        gets player names
+        populates the table with players
+        creates a deck at the table
+        suffles the table
+    Main Game loop:
+        while (gameon)
+            ante();
+            deal() 2 cards for each player;
+            bet();
+            burn() 1 card;
+            deal() 3 cards to common cards;
+            bet();
+            burn() 1 card;
+            deal() 1 card to common cards;
+            bet();
+            burn() 1 card;
+            deal() 1 card to common cards;
+            bet();
+            Determine winner.
+                pay() winner.
+                remove broke players.
+                if only 1 player that player wins.
+            ask to quit, if yes then gameon=false.
+    
