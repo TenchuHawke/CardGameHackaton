@@ -5,5 +5,8 @@ namespace CardGame {
             System.Console.WriteLine ("Hit Enter to Continue");
             System.Console.ReadLine ();
         }
+        public static void Test() {
+
+        }
     }
 }
