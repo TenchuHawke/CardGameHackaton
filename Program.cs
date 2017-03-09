@@ -16,7 +16,12 @@ namespace CardGame {
             table.playerList.Add(Bill);
             Player Sarah = new Player ("Sarah");
             table.playerList.Add(Sarah);
+            bool gameOn = true;
+            while (gameOn){
+
+            
             table.myDeck.shuffle();
+
             // System.Console.WriteLine (Player1.playerName);
             // System.Console.WriteLine (Player1.money);
             // creates a new deck and tests that object.
@@ -103,6 +108,12 @@ namespace CardGame {
                 System.Console.WriteLine(table.playerList[i].playerName);
                 table.displayPlayerCards(i);
             }
+            System.Console.WriteLine("Quit to end");
+            string Input = Console.ReadLine();
+            if(Input == "Quit"){
+                    gameOn = false;
+            }
         }
+    }
     }
 }
