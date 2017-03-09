@@ -44,11 +44,12 @@ namespace CardGame {
             // pauses before closing.
             // Commands.Pause ();
 
-            table.ante();
             Player temp = table.playerList[0];
             table.playerList.RemoveAt(0);
             table.playerList.Add(temp);
             temp = null;
+            table.anteUp();
+            var currentBetValue = table.currentBetValue;
             // deal hand of 2 cards.
             for(var i = 1; i <= 2; i++){
                 for(var j = 0; j < table.playerList.Count; j++){
@@ -65,7 +66,9 @@ namespace CardGame {
             // deal 3 cards to common
             for(var i = 1; i <= 3; i++){   
                 table.common.hand.Add(table.myDeck.deal());
+                    // System.Console.WriteLine(card.ToString());
             }
+            table.displayCommonCards();
             //bet
             for(var i = 0; i < table.playerList.Count; i++){
                 table.bet(i,10);
@@ -75,6 +78,7 @@ namespace CardGame {
             table.myDeck.burn();
             // deal 1 card to common
             table.common.hand.Add(table.myDeck.deal());
+            table.displayCommonCards();
             //bet
            for(var i = 0; i < table.playerList.Count; i++){
                 table.bet(i,10);
@@ -84,12 +88,21 @@ namespace CardGame {
             table.myDeck.burn();
             // deal 1 card to common
             table.common.hand.Add(table.myDeck.deal());
+            table.displayCommonCards();
             //bet
            for(var i = 0; i < table.playerList.Count; i++){
                 table.bet(i,50);
             }
             Commands.Pause();
+
             System.Console.WriteLine("Pot value is {0}",table.potValue);
+            System.Console.WriteLine("List of 5 cards");
+            table.displayCommonCards();
+            
+            for(var i = 0; i < table.playerList.Count; i++){
+                System.Console.WriteLine(table.playerList[i].playerName);
+                table.displayPlayerCards(i);
+            }
 
         }
     }
