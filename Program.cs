@@ -25,22 +25,22 @@ namespace CardGame {
             // shuffles the deck.
             // table.myDeck.shuffle ();
             // prints each card in the approperiate color.
-            foreach (Card card in table.myDeck.cards) {
-                if (card.color == "red") {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    System.Console.WriteLine (card.ToString ());
-                    Console.ForegroundColor = ConsoleColor.Green;
-                } else if (card.color == "black") {
-                    Console.ForegroundColor = ConsoleColor.Black;
-                    // Console.BackgroundColor = ConsoleColor.White;
-                    System.Console.WriteLine (card.ToString ());
-                    Console.ForegroundColor = ConsoleColor.Green;
-                } else {
-                    Console.ForegroundColor = ConsoleColor.White;
-                    System.Console.WriteLine (card.ToString ());
-                    Console.ForegroundColor = ConsoleColor.Green;
-                }
-            }
+            // foreach (Card card in table.myDeck.cards) {
+            //     if (card.color == "red") {
+            //         Console.ForegroundColor = ConsoleColor.Red;
+            //         System.Console.WriteLine (card.ToString ());
+            //         // Console.ForegroundColor = ConsoleColor.Green;
+            //     } else if (card.color == "black") {
+            //         Console.ForegroundColor = ConsoleColor.Black;
+            //         // Console.BackgroundColor = ConsoleColor.White;
+            //         System.Console.WriteLine (card.ToString ());
+            //         // Console.ForegroundColor = ConsoleColor.Green;
+            //     } else {
+            //         Console.ForegroundColor = ConsoleColor.White;
+            //         System.Console.WriteLine (card.ToString ());
+            //         Console.ForegroundColor = ConsoleColor.Green;
+            //     }
+            // }
             // pauses before closing.
             // Commands.Pause ();
 
@@ -103,7 +103,6 @@ namespace CardGame {
                 System.Console.WriteLine(table.playerList[i].playerName);
                 table.displayPlayerCards(i);
             }
-
         }
     }
 }
