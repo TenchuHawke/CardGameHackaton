@@ -20,7 +20,6 @@ namespace CardGame {
                 switch (val) {
                     case (1):
                         return "Ace";
-                        break;
                         // all value (2-10) cards fall through to command after 10 and are converted to string equivalant versions of themselves.
                     case (2):
                     case (3):
@@ -32,19 +31,14 @@ namespace CardGame {
                     case (9):
                     case (10):
                         return val.ToString ();
-                        break;
                     case (11):
                         return "Jack";
-                        break;
                     case (12):
                         return "Queen";
-                        break;
                     case (13):
                         return "King";
-                        break;
                     default:
                         return "Card definition error.";
-                        break;
                 }
             }
         }

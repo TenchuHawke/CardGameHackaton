@@ -1,8 +1,12 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace CardGame {
     class Program {
         static void Main (string[] args) {
-            // Commands.Test();
+            Commands.Test ();
             // // sets color for table.
             Console.BackgroundColor = ConsoleColor.DarkGreen;
             Console.Clear ();
@@ -105,7 +109,7 @@ namespace CardGame {
                 for (var i = 0; i < table.playerList.Count; i++) {
                     System.Console.WriteLine (table.playerList[i].playerName);
                     string output = "";
-                    output += Logic.ValueHand (Logic.Combine (table.playerList[i], table.common));
+                    // output += Logic.ValueHand (Logic.Combine (table.playerList[i], table.common));
                     System.Console.WriteLine ("Hand Value: " + output);
                     table.displayPlayerCards (i);
                     Commands.Pause ();
